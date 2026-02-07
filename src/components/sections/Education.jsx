@@ -106,7 +106,7 @@ export default function Education() {
 
         {/* Certifications — compact horizontal cards */}
         <AnimatedSection>
-          <div className="mb-4 flex items-center gap-2">
+          <div className="mb-4 flex items-center gap-1">
             <Award
               size={18}
               className="text-primary-600 dark:text-primary-400"
@@ -117,7 +117,7 @@ export default function Education() {
           </div>
         </AnimatedSection>
 
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="mx-auto grid w-full max-w-6xl gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {certifications.map((cert, idx) => (
             <AnimatedSection key={cert.name} delay={idx * 80}>
               <button
@@ -140,7 +140,7 @@ export default function Education() {
                     <h4 className="truncate text-sm font-medium text-surface-900 dark:text-white">
                       {cert.name}
                     </h4>
-                    <p className="text-xs text-surface-500 dark:text-surface-400">
+                    <p className="truncate text-xs text-surface-500 dark:text-surface-400">
                       {cert.issuer} &middot; {cert.date}
                     </p>
                   </div>
