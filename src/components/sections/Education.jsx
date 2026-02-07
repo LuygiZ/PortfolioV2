@@ -132,6 +132,7 @@ export default function Education() {
                       alt={`${cert.name} certificate`}
                       className="h-full w-full object-cover"
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   {/* Info */}
