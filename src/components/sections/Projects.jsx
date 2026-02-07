@@ -5,6 +5,7 @@ import {
   ChevronDown,
   ChevronUp,
   Star,
+  Clock,
 } from "lucide-react";
 import { projects } from "../../data/portfolio";
 import SectionHeading from "../ui/SectionHeading";
@@ -17,21 +18,43 @@ function ProjectCard({ project, index }) {
   return (
     <AnimatedSection delay={index * 150}>
       <article className="group overflow-hidden rounded-xl border border-surface-200 bg-white transition-all hover:shadow-lg dark:border-surface-700 dark:bg-surface-900">
-        {/* Header */}
+        {/* Project image */}
+        <div className="relative aspect-video overflow-hidden bg-surface-100 dark:bg-surface-800">
+          <img
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+          />
+          {/* Overlay badges */}
+          <div className="absolute top-3 left-3 flex gap-2">
+            {project.featured && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/90 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                <Star size={12} className="fill-white" />
+                Featured
+              </span>
+            )}
+            {project.wip && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-blue-500/90 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                <Clock size={12} />
+                In Progress
+              </span>
+            )}
+          </div>
+          {project.grade && (
+            <div className="absolute top-3 right-3 rounded-full bg-green-600/90 px-3 py-1 text-xs font-bold text-white backdrop-blur-sm">
+              {project.grade}
+            </div>
+          )}
+        </div>
+
+        {/* Content */}
         <div className="p-6">
           <div className="mb-3 flex items-start justify-between">
             <div>
-              <div className="flex items-center gap-2">
-                <h3 className="text-lg font-bold text-surface-900 dark:text-white">
-                  {project.title}
-                </h3>
-                {project.featured && (
-                  <Star
-                    size={14}
-                    className="fill-amber-400 text-amber-400"
-                  />
-                )}
-              </div>
+              <h3 className="text-lg font-bold text-surface-900 dark:text-white">
+                {project.title}
+              </h3>
               <p className="mt-1 text-sm text-surface-500 dark:text-surface-400">
                 {project.subtitle}
               </p>
@@ -83,24 +106,24 @@ function ProjectCard({ project, index }) {
           </button>
         </div>
 
-        {/* Expanded details */}
+        {/* Expanded case study */}
         {expanded && (
           <div className="border-t border-surface-200 bg-surface-50 p-6 dark:border-surface-700 dark:bg-surface-800/50">
             <div className="grid gap-6 sm:grid-cols-2">
-              {/* Context */}
+              {/* Context / Problem */}
               <div>
                 <h4 className="mb-2 text-xs font-semibold tracking-wider text-surface-500 uppercase dark:text-surface-400">
-                  Context
+                  Context & Problem
                 </h4>
                 <p className="text-sm leading-relaxed text-surface-600 dark:text-surface-300">
                   {project.context}
                 </p>
               </div>
 
-              {/* Architecture */}
+              {/* Architecture / Solution */}
               <div>
                 <h4 className="mb-2 text-xs font-semibold tracking-wider text-surface-500 uppercase dark:text-surface-400">
-                  Architecture
+                  Architecture & Solution
                 </h4>
                 <p className="text-sm leading-relaxed text-surface-600 dark:text-surface-300">
                   {project.architecture}
@@ -125,10 +148,10 @@ function ProjectCard({ project, index }) {
                 </ul>
               </div>
 
-              {/* Results */}
+              {/* Results & Learnings */}
               <div>
                 <h4 className="mb-2 text-xs font-semibold tracking-wider text-surface-500 uppercase dark:text-surface-400">
-                  Results
+                  Results & Learnings
                 </h4>
                 <ul className="space-y-1">
                   {project.results.map((r, i) => (
@@ -154,7 +177,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="bg-white py-20 dark:bg-surface-900 sm:py-28"
+      className="bg-gradient-to-b from-white via-white to-surface-50 py-20 dark:from-surface-900 dark:via-surface-900 dark:to-surface-950 sm:py-28"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <SectionHeading
@@ -162,7 +185,7 @@ export default function Projects() {
           subtitle="Selected work and case studies"
         />
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           {projects.map((project, idx) => (
             <ProjectCard key={project.id} project={project} index={idx} />
           ))}

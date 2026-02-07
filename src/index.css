@@ -43,13 +43,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scrollbar styling */
+/* Scrollbar styling – theme-aware */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-surface-300) transparent;
+}
+
+.dark * {
+  scrollbar-color: var(--color-surface-600) transparent;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--color-surface-100);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-surface-900);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -57,8 +70,16 @@ body {
   border-radius: 4px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-400);
+}
+
 .dark ::-webkit-scrollbar-thumb {
   background: var(--color-surface-600);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-surface-500);
 }
 
 /* Section animation */

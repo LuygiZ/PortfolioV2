@@ -1,42 +1,63 @@
+// ── Asset imports ──
+import iplLogo from "../assets/ipl.png";
+import isepLogo from "../assets/isep.png";
+import udemyLogo from "../assets/udemy.png";
+import profilePhoto from "../assets/Luís_Santos.png";
+import luisLogo from "../assets/LuisLogo.png";
+
+import ainetImg from "../assets/projects/ainet.png";
+import wheelchairImg from "../assets/projects/wheelchair.png";
+import jogralImg from "../assets/projects/portfolio.png";
+import gjfImg from "../assets/projects/GJF.png";
+
+import cambridgeCert from "../assets/certificates/cambridgecertificate.png";
+import csharpCert from "../assets/certificates/csharpcertificate.jpg";
+import licenciaturaCert from "../assets/certificates/licenciatura.jpg";
+
+// ── Personal Info ──
 export const personalInfo = {
-  name: "Luis Santos",
-  title: "Junior Software Engineer",
+  name: "Luís Santos",
+  title: "Junior Software Developer",
   tagline: "Building reliable software with .NET & modern web technologies",
   description:
-    "Computer Engineering graduate from IPLeiria, currently pursuing a Master's in Software Engineering at ISEP. Passionate about clean architecture, backend systems, and continuous learning.",
+    "Computer Engineering graduate from IPLeiria, currently pursuing a Master's in Software Engineering at ISEP.",
   email: "luismanuelsantos2801@gmail.com",
   github: "https://github.com/LuygiZ",
   linkedin: "https://www.linkedin.com/in/lu%C3%ADs-santos-434376281/",
   location: "Porto, Portugal",
+  profilePhoto,
+  logo: luisLogo,
 };
 
+// ── Credibility Badges ──
 export const credentials = [
   {
     id: "ipleiria",
-    name: "IPLeiria",
     fullName: "Polytechnic Institute of Leiria",
     type: "Bachelor's in Computer Engineering",
     status: "Completed",
     url: "https://www.ipleiria.pt",
+    logo: iplLogo,
   },
   {
     id: "isep",
-    name: "ISEP",
     fullName: "Instituto Superior de Engenharia do Porto",
     type: "Master's in Software Engineering",
     status: "Ongoing",
     url: "https://www.isep.ipp.pt",
+    logo: isepLogo,
   },
   {
     id: "udemy",
-    name: "Udemy",
     fullName: "Udemy Professional Certifications",
     type: "Professional Certifications",
     status: "Continuous",
     url: "https://www.udemy.com",
+    logo: udemyLogo,
   },
 ];
 
+// ── Education ──
 export const education = [
   {
     institution: "ISEP – Instituto Superior de Engenharia do Porto",
@@ -68,157 +89,203 @@ export const education = [
   },
 ];
 
+// ── Certifications ──
 export const certifications = [
   {
-    name: "Complete C# & .NET Developer Bootcamp",
-    issuer: "Udemy",
+    name: "Bachelor's Degree in Computer Engineering",
+    issuer: "IPLeiria",
     date: "2024",
+    description: "Bachelor's degree diploma from the Polytechnic Institute of Leiria in Computer Engineering.",
+    image: licenciaturaCert,
     credentialUrl: "#",
   },
   {
-    name: "ASP.NET Core Web API",
+    name: "Web Development with C# & ASP.NET",
     issuer: "Udemy",
     date: "2024",
-    credentialUrl: "#",
-  },
-  {
-    name: "SQL Server & Database Design",
-    issuer: "Udemy",
-    date: "2023",
+    description: "Professional certification covering C#, ASP.NET Core, and full-stack web development patterns.",
+    image: csharpCert,
     credentialUrl: "#",
   },
   {
     name: "English B2 – Cambridge",
     issuer: "Cambridge Assessment",
     date: "2022",
+    description: "B2 First Certificate in English, demonstrating upper-intermediate proficiency.",
+    image: cambridgeCert,
     credentialUrl: "#",
   },
 ];
 
+// ── Skills ──
 export const skillCategories = [
   {
-    name: "Backend Development",
+    name: "Frontend",
+    icon: "Globe",
+    skills: [
+      { name: "HTML & CSS", level: 80 },
+      { name: "JavaScript", level: 75 },
+      { name: "React", level: 65 },
+      { name: "Vue.js", level: 55 },
+      { name: "Bootstrap", level: 70 },
+      { name: "Tailwind CSS", level: 60 },
+    ],
+  },
+  {
+    name: "Backend",
     icon: "Server",
     skills: [
-      { name: "C#", level: 85 },
-      { name: ".NET / ASP.NET Core", level: 80 },
-      { name: "Entity Framework", level: 75 },
-      { name: "REST APIs", level: 80 },
-      { name: "Unit Testing", level: 70 },
+      { name: "C# / .NET", level: 85 },
+      { name: "ASP.NET Core", level: 75 },
+      { name: "Laravel (PHP)", level: 65 },
+      { name: "Node.js", level: 55 },
+      { name: "REST APIs", level: 75 },
     ],
   },
   {
     name: "Databases",
     icon: "Database",
     skills: [
-      { name: "SQL Server", level: 80 },
-      { name: "PostgreSQL", level: 65 },
-      { name: "Database Design", level: 75 },
-      { name: "LINQ", level: 70 },
+      { name: "MySQL", level: 75 },
+      { name: "SQL Server", level: 75 },
+      { name: "MongoDB", level: 55 },
     ],
   },
   {
-    name: "Frontend & Web",
-    icon: "Globe",
-    skills: [
-      { name: "HTML / CSS", level: 75 },
-      { name: "JavaScript", level: 70 },
-      { name: "React", level: 65 },
-      { name: "Tailwind CSS", level: 65 },
-      { name: "Responsive Design", level: 70 },
-    ],
-  },
-  {
-    name: "Tools & Practices",
+    name: "Tools & DevOps",
     icon: "Wrench",
     skills: [
       { name: "Git & GitHub", level: 80 },
-      { name: "Visual Studio", level: 85 },
-      { name: "VS Code", level: 80 },
-      { name: "Docker", level: 55 },
-      { name: "Agile / Scrum", level: 65 },
+      { name: "Docker (Basics)", level: 50 },
+      { name: "Azure DevOps", level: 55 },
+      { name: "Postman", level: 70 },
+      { name: "Visual Studio / VS Code", level: 85 },
+    ],
+  },
+  {
+    name: "AI & Data",
+    icon: "Brain",
+    skills: [
+      { name: "Python", level: 60 },
+      { name: "TensorFlow", level: 45 },
     ],
   },
 ];
 
+// ── Projects ──
 export const projects = [
   {
-    id: "project-1",
-    title: "Enterprise Task Management API",
-    subtitle: "RESTful API with Clean Architecture",
+    id: "cinemagic",
+    title: "CineMagic",
+    subtitle: "Full-Stack Cinema Management Platform",
+    grade: "18/20",
+    image: ainetImg,
     description:
-      "A full-featured task management API built with ASP.NET Core following Clean Architecture principles. Supports user authentication, role-based authorization, and CRUD operations with pagination and filtering.",
+      "A web application developed using Laravel to manage movie sessions, theaters, ticket sales, and seat occupancy. This project provided deep learning experience in full-stack web development.",
     context:
-      "Developed as a capstone project to demonstrate enterprise-level backend development skills and architectural knowledge.",
-    technologies: ["C#", "ASP.NET Core", "Entity Framework", "SQL Server", "JWT Auth", "xUnit"],
+      "Developed as part of the Internet Applications (AiNet) course at IPLeiria, requiring a complete CRUD-based web application with authentication, authorization, and a relational database.",
+    technologies: ["HTML", "CSS", "JavaScript", "Laravel", "MySQL"],
     architecture:
-      "Clean Architecture with separate layers for Domain, Application, Infrastructure, and Presentation. Repository pattern for data access, MediatR for CQRS.",
+      "Laravel MVC with Blade templates, Eloquent ORM for database access, and middleware for authentication and role-based access control. MySQL relational schema designed for cinemas, sessions, movies, and ticket sales.",
     challenges: [
-      "Implementing role-based authorization with fine-grained permissions",
-      "Designing efficient pagination for large datasets",
-      "Structuring the project for testability and maintainability",
+      "Designing a normalized database schema for cinemas, rooms, sessions, and seat maps",
+      "Implementing a seat selection system with real-time availability checks",
+      "Handling concurrent ticket purchases and preventing double-booking",
     ],
     results: [
-      "95%+ code coverage with unit and integration tests",
-      "Sub-100ms response times for standard queries",
-      "Well-documented API with Swagger/OpenAPI",
+      "Final grade of 18/20",
+      "Full CRUD for movies, sessions, theaters, and users",
+      "Responsive interface for both desktop and mobile devices",
     ],
     github: "#",
     live: null,
     featured: true,
   },
   {
-    id: "project-2",
-    title: "Student Portal Web Application",
-    subtitle: "Full-Stack Academic Platform",
+    id: "wheelchair",
+    title: "AI Voice-Controlled Wheelchair",
+    subtitle: "Final Degree Project – AI & IoT",
+    grade: "15/20",
+    image: wheelchairImg,
     description:
-      "A comprehensive web application for managing student information, course enrollments, and grade tracking. Features a responsive dashboard with real-time data visualization.",
+      "Final degree project focused on developing a voice-controlled electric wheelchair system using Artificial Intelligence, deployed on a Raspberry Pi with a Vue.js-based web interface.",
     context:
-      "Built during the Bachelor's program as a team project, serving as a practical application of full-stack development skills.",
-    technologies: ["C#", "ASP.NET MVC", "SQL Server", "Bootstrap", "JavaScript", "Chart.js"],
+      "Bachelor's thesis project at IPLeiria, combining AI, embedded systems, and web technologies to create an accessible mobility solution for people with motor disabilities.",
+    technologies: ["HTML", "CSS", "JavaScript", "Python", "TensorFlow", "Vue.js"],
     architecture:
-      "MVC pattern with service layer, repository pattern, and dependency injection. SQL Server for data persistence with stored procedures for complex queries.",
+      "Raspberry Pi running a Python-based voice recognition engine powered by TensorFlow. Vue.js frontend for real-time status monitoring, configuration, and command history. WebSocket communication between the Pi and the web dashboard.",
     challenges: [
-      "Coordinating work across a team of 4 developers",
-      "Handling complex data relationships between students, courses, and grades",
-      "Building responsive dashboards with real-time chart updates",
+      "Training a custom voice recognition model for wheelchair commands in noisy environments",
+      "Integrating TensorFlow Lite on a resource-constrained Raspberry Pi",
+      "Building a responsive Vue.js dashboard for real-time wheelchair status monitoring",
     ],
     results: [
-      "Successfully used by 50+ students during academic period",
-      "Responsive design working across all device sizes",
-      "Positive feedback from professors on code quality",
+      "Final grade of 15/20",
+      "Functional voice-controlled prototype with 85%+ command accuracy",
+      "Web-based monitoring dashboard with real-time feedback",
     ],
     github: "#",
     live: null,
     featured: true,
   },
   {
-    id: "project-3",
+    id: "portfolio-v1",
     title: "Personal Portfolio Website",
-    subtitle: "React + Tailwind CSS",
+    subtitle: "First React Project",
+    grade: null,
+    image: jogralImg,
     description:
-      "A modern, responsive portfolio website built with React and Tailwind CSS. Features dark mode, smooth animations, and optimized performance. Showcases projects, skills, and professional background.",
+      "Personal portfolio website developed using React. This was the first React project and served as a hands-on learning experience for modern frontend development.",
     context:
-      "Created to establish a professional online presence and demonstrate frontend development capabilities beyond backend expertise.",
-    technologies: ["React", "Tailwind CSS", "Vite", "React Router", "Lucide Icons"],
+      "Created to establish a professional online presence while learning React, component-based architecture, and modern CSS frameworks.",
+    technologies: ["HTML", "CSS", "React", "Bootstrap", "Framer Motion", "MongoDB"],
     architecture:
-      "Component-based architecture with context API for theme management. Data-driven design with centralized portfolio data.",
+      "Component-based SPA with React Router for navigation, Framer Motion for page transitions and animations, Bootstrap for responsive layout, and a MongoDB backend for contact form submissions.",
     challenges: [
-      "Designing a visually appealing and professional layout",
-      "Implementing smooth dark/light mode transitions",
-      "Ensuring accessibility and performance across devices",
+      "Learning React fundamentals while building a production-ready application",
+      "Implementing smooth page transitions with Framer Motion",
+      "Setting up a MongoDB backend for the contact form",
     ],
     results: [
-      "Lighthouse score 95+ across all categories",
-      "Fully responsive from mobile to 4K displays",
-      "Easy to update with centralized data structure",
+      "Fully functional portfolio deployed online",
+      "Solid understanding of React fundamentals gained",
+      "Foundation for this improved V2 portfolio",
     ],
     github: "#",
-    live: "#",
+    live: null,
     featured: false,
+  },
+  {
+    id: "gjf",
+    title: "Grupo de Jovens de Fornos",
+    subtitle: "Community Youth Group Website",
+    grade: null,
+    image: gjfImg,
+    description:
+      "A website developed to present information about a youth group that organizes activities and events in Fornos, Santa Maria da Feira, promoting community engagement and shared experiences.",
+    context:
+      "A personal project built to support a local community group, providing them with a digital presence to share events, activities, and contact information.",
+    technologies: ["React", "JavaScript", "HTML", "CSS", "MongoDB", "Web3Forms"],
+    architecture:
+      "React SPA with component-based design, MongoDB for event and member data storage, and Web3Forms integration for a serverless contact form.",
+    challenges: [
+      "Designing a user-friendly interface for a non-technical audience",
+      "Integrating Web3Forms for contact form submissions without a backend",
+      "Creating a content structure that's easy for the group to request updates",
+    ],
+    results: [
+      "Active website used by the community group",
+      "Serverless contact form reducing hosting complexity",
+      "Positive feedback from group members and visitors",
+    ],
+    github: "#",
+    live: null,
+    featured: false,
+    wip: true,
   },
 ];
 
+// ── Navigation ──
 export const navigationLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },

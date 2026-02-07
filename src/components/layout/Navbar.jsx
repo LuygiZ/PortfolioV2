@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
-import { navigationLinks } from "../../data/portfolio";
+import { navigationLinks, personalInfo } from "../../data/portfolio";
 import { useScrollSpy } from "../../hooks/useScrollSpy";
 
 export default function Navbar() {
@@ -40,14 +40,18 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         {/* Logo */}
         <a
           href="#home"
           onClick={(e) => handleLinkClick(e, "#home")}
-          className="text-xl font-bold text-surface-900 dark:text-white"
+          className="flex items-center gap-2"
         >
-          <span className="text-gradient">Portfolio</span>
+          <img
+            src={personalInfo.logo}
+            alt={`${personalInfo.name} logo`}
+            className="h-8 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop links */}

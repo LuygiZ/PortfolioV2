@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-surface-50 via-white to-primary-50 dark:from-surface-950 dark:via-surface-900 dark:to-surface-900"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-surface-50 via-primary-50/30 to-white dark:from-surface-950 dark:via-surface-900 dark:to-surface-900"
     >
       {/* Background decoration */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -14,25 +14,27 @@ export default function Hero() {
         <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-primary-300/20 blur-3xl dark:bg-primary-700/10" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 py-20 text-center sm:px-6">
-        {/* Credibility Badges */}
+      <div className="relative z-10 mx-auto max-w-5xl px-4 py-20 text-center sm:px-6">
+        {/* Credibility Badges with real logos — scale up on larger screens */}
         <AnimatedSection>
-          <div className="mb-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mb-8 flex flex-wrap items-center justify-center gap-4 md:gap-5 lg:gap-6">
             {credentials.map((cred) => (
               <a
                 key={cred.id}
                 href={cred.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 rounded-full border border-surface-200 bg-white/80 px-4 py-2 text-xs font-medium text-surface-600 backdrop-blur-sm transition-all hover:border-primary-300 hover:shadow-md dark:border-surface-700 dark:bg-surface-800/80 dark:text-surface-300 dark:hover:border-primary-600"
+                title={`${cred.fullName} – ${cred.type}`}
+                className="group flex items-center gap-2.5 rounded-full border border-surface-200 bg-white/80 px-4 py-2 text-xs font-medium text-surface-600 backdrop-blur-sm transition-all hover:border-primary-300 hover:shadow-md dark:border-surface-700 dark:bg-surface-800/80 dark:text-surface-300 dark:hover:border-primary-600 md:px-5 md:py-2.5 md:text-sm lg:px-6 lg:py-3"
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary-100 text-[10px] font-bold text-primary-700 dark:bg-primary-900/50 dark:text-primary-300">
-                  {cred.name.charAt(0)}
-                </span>
-                <span className="hidden sm:inline">{cred.name}</span>
-                <span className="sm:hidden">{cred.name}</span>
+                <img
+                  src={cred.logo}
+                  alt={`${cred.fullName} logo`}
+                  className="h-6 w-auto object-contain md:h-8 lg:h-10"
+                  loading="lazy"
+                />
                 {cred.status === "Ongoing" && (
-                  <span className="rounded-full bg-amber-100 px-1.5 py-0.5 text-[10px] text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                  <span className="rounded-full bg-amber-100 px-1.5 py-0.5 text-[10px] text-amber-700 dark:bg-amber-900/30 dark:text-amber-300 md:text-xs">
                     Ongoing
                   </span>
                 )}
@@ -41,16 +43,29 @@ export default function Hero() {
           </div>
         </AnimatedSection>
 
+        {/* Profile Photo — larger on md/lg/xl screens */}
+        <AnimatedSection delay={50}>
+          <div className="mb-6 flex justify-center">
+            <div className="h-32 w-32 overflow-hidden rounded-full border-4 border-white shadow-lg ring-2 ring-primary-200 dark:border-surface-800 dark:ring-primary-700 sm:h-36 sm:w-36 md:h-44 md:w-44 lg:h-52 lg:w-52 xl:h-56 xl:w-56">
+              <img
+                src={personalInfo.profilePhoto}
+                alt={`${personalInfo.name} profile photo`}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </AnimatedSection>
+
         {/* Headline */}
         <AnimatedSection delay={100}>
-          <h1 className="text-4xl font-extrabold tracking-tight text-surface-900 dark:text-white sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-surface-900 dark:text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Hi, I&apos;m{" "}
             <span className="text-gradient">{personalInfo.name}</span>
           </h1>
         </AnimatedSection>
 
         <AnimatedSection delay={200}>
-          <p className="mt-4 text-xl font-medium text-surface-600 dark:text-surface-300 sm:text-2xl">
+          <p className="mt-4 text-xl font-medium text-surface-600 dark:text-surface-300 sm:text-2xl md:text-3xl">
             {personalInfo.title}
           </p>
         </AnimatedSection>

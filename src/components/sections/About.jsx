@@ -30,7 +30,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-white py-20 dark:bg-surface-900 sm:py-28"
+      className="bg-gradient-to-b from-white via-white to-surface-50 py-20 dark:from-surface-900 dark:via-surface-900 dark:to-surface-950 sm:py-28"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
@@ -50,7 +50,7 @@ export default function About() {
               certifications and personal projects.
             </p>
             <p className="mt-4 text-base leading-relaxed text-surface-600 dark:text-surface-300 sm:text-lg">
-              My core strength is backend development with C# and .NET, but I
+              I have already worked with backend development with C# and .NET, but I
               actively work on expanding my skills into web technologies and
               modern frontend frameworks. I believe in writing code that is not
               just functional, but readable, testable, and easy to maintain.

@@ -1,4 +1,4 @@
-import { Server, Database, Globe, Wrench } from "lucide-react";
+import { Server, Database, Globe, Wrench, Brain } from "lucide-react";
 import { skillCategories } from "../../data/portfolio";
 import SectionHeading from "../ui/SectionHeading";
 import AnimatedSection from "../ui/AnimatedSection";
@@ -9,6 +9,7 @@ const iconMap = {
   Database,
   Globe,
   Wrench,
+  Brain,
 };
 
 function SkillBar({ name, level }) {
@@ -38,7 +39,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-surface-50 py-20 dark:bg-surface-950 sm:py-28"
+      className="bg-gradient-to-b from-surface-50 via-surface-50 to-white py-20 dark:from-surface-950 dark:via-surface-950 dark:to-surface-900 sm:py-28"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
@@ -46,12 +47,12 @@ export default function Skills() {
           subtitle="Tools and technologies I work with"
         />
 
-        <div className="grid gap-8 sm:grid-cols-2">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, idx) => {
             const Icon = iconMap[category.icon];
             return (
               <AnimatedSection key={category.name} delay={idx * 100}>
-                <div className="rounded-xl border border-surface-200 bg-white p-6 dark:border-surface-700 dark:bg-surface-900">
+                <div className="h-full rounded-xl border border-surface-200 bg-white p-6 dark:border-surface-700 dark:bg-surface-900">
                   <div className="mb-6 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400">
                       {Icon && <Icon size={20} />}

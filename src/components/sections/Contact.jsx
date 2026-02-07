@@ -34,7 +34,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-white py-20 dark:bg-surface-900 sm:py-28"
+      className="bg-gradient-to-b from-white via-white to-surface-50 py-20 dark:from-surface-900 dark:via-surface-900 dark:to-surface-950 sm:py-28"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <SectionHeading
