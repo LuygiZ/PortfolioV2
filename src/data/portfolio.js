@@ -9,6 +9,7 @@ import ainetImg from "../assets/projects/ainet.png";
 import wheelchairImg from "../assets/projects/wheelchair.png";
 import jogralImg from "../assets/projects/portfolio.png";
 import gjfImg from "../assets/projects/GJF.png";
+import amro from "../assets/projects/amroManager.png";
 
 import cambridgeCert from "../assets/certificates/cambridgecertificate.png";
 import csharpCert from "../assets/certificates/csharpcertificate.jpg";
@@ -22,7 +23,7 @@ export const personalInfo = {
   description:
     "Computer Engineering graduate from IPLeiria, currently pursuing a Master's in Software Engineering at ISEP.",
   email: "luismanuelsantos2801@gmail.com",
-  github: "https://github.com/LuygiZ",
+  github: "https://github.com/LuisMNSantos",
   linkedin: "https://www.linkedin.com/in/lu%C3%ADs-santos-434376281/",
   location: "Porto, Portugal",
   profilePhoto,
@@ -283,6 +284,38 @@ export const projects = [
     featured: false,
     wip: true,
   },
+  {
+  id: "amro-stock-manager",
+  title: "AMRO Stock Manager",
+  subtitle: "Internal Operations Management Desktop App",
+  grade: null,
+  image: amro,
+  description:
+    "A Windows desktop application built from scratch to handle the day-to-day operational needs of a residential building, covering inventory control, equipment loans, space reservations, and package tracking.",
+  context:
+    "A personal project developed to solve real internal management needs at a residence, replacing manual tracking with a structured, intuitive desktop solution used daily by staff.",
+  technologies: [".NET 9", "MAUI", "Blazor", "C#", "SQLite", "Entity Framework Core", "MudBlazor"],
+  architecture:
+    "MAUI Blazor Hybrid desktop app with a local SQLite database managed via Entity Framework Core. MudBlazor provides the component library. Data is persisted locally with automatic OneDrive-integrated backups using SQLite's VACUUM INTO for consistency.",
+  challenges: [
+    "Designing an intuitive UI for non-technical daily users",
+    "Managing schema evolution on an existing SQLite database without migrations framework",
+    "Implementing a reservation state machine (Scheduled → Active → Completed) derived from access card loan status",
+    "Supporting multi-day cinema reservations with correct overlap detection across all calendar views",
+    "Ensuring safe database backups while the app is running using VACUUM INTO",
+  ],
+  results: [
+    "Actively used in production for daily stock and equipment management",
+    "Automatic startup backups synced to OneDrive for data safety",
+    "Full reservation calendar with monthly overview and per-day detail view",
+    "Package and letter tracking with room-based delivery history",
+    "CSV export and historical data cleanup to keep the database lightweight",
+  ],
+  github: "#",
+  live: null,
+  featured: true,
+  wip: false,
+},
 ];
 
 // ── Navigation ──
